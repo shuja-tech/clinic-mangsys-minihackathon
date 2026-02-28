@@ -1,0 +1,130 @@
+/* =========================================
+   GLOBAL VARIABLES
+========================================= */
+:root {
+  --primary: #0097bd;
+  --primary-dark: #007fa0;
+  --white: #ffffff;
+  --hero-gradient-start: #0a5d8f;
+  --hero-gradient-mid: rgba(10, 93, 143, 0.55);
+  --hero-gradient-end: rgba(0, 0, 0, 0);
+  --text-light: #ffffff;
+  --heading-size: clamp(32px, 5vw, 48px);
+  --transition: 0.2s ease-in-out;
+}
+
+/* =========================================
+   RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  color: #333;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  background: url('/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 5vw;
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--hero-gradient-start) 0%,
+    rgba(10,93,143,0.9) 20%,
+    var(--hero-gradient-mid) 45%,
+    var(--hero-gradient-end) 68%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  padding: 48px 0;
+}
+
+.hero h5 {
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+.hero h1 {
+  font-size: var(--heading-size);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 28px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn.outline {
+  border: 2px solid var(--white);
+  color: var(--white);
+  background: transparent;
+}
+
+.btn.outline:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 460px;
+    padding: 0 24px;
+  }
+
+  .hero h1 {
+    line-height: 1.2;
+  }
+}
