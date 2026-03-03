@@ -78,7 +78,7 @@ function Home() {
                 </svg>
               </button>
             </form>
-            <a href="#login" className="btn outline">Login</a>
+            <button className="btn outline" onClick={() => window.location.hash = '#login'}>Login</button>
             
             <a href="#" className="btn primary">Get in Touch</a>
           </div>
@@ -119,7 +119,7 @@ function Home() {
           </form>
 
           <div className="mobile-actions">
-            <a href="#login" className="btn outline">Login</a>
+            <button className="btn outline" onClick={() => window.location.hash = '#login'}>Login</button>
             <a href="#" className="btn subtle">Customer Support</a>
             <a href="#" className="btn primary">Get in Touch</a>
           </div>
